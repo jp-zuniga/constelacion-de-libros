@@ -1,4 +1,4 @@
-package org.ConstelacionDeLibros.modelos;
+package org.ConstelacionDeLibros.models;
 
 import lombok.Getter;
 import lombok.Setter;
