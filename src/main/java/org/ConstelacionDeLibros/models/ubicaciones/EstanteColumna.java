@@ -12,7 +12,10 @@ import javax.persistence.*;
 @Setter
 public class EstanteColumna extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_fila", nullable = false)
+    @JoinColumn(
+        name = "id_fila",
+        nullable = false
+    )
     @Required
     private EstanteFila fila;
 

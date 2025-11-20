@@ -13,17 +13,25 @@ import java.util.Set;
 @Getter
 @Setter
 public class Libro extends BaseEntity {
-    @Column(length = 120, nullable = false)
+    @Column(
+        length = 120,
+        nullable = false
+    )
     @Required
     private String titulo;
 
     @Column(nullable = false)
     @ManyToMany(
-        fetch = FetchType.LAZY, mappedBy = "autor"
+        fetch = FetchType.LAZY,
+        mappedBy = "autor"
     )
     private Set<Autor> autores;
 
-    @Column(length = 20, nullable = false, unique = true)
+    @Column(
+        length = 20,
+        nullable = false,
+        unique = true
+    )
     @Required
     private String isbn;
 
@@ -32,20 +40,26 @@ public class Libro extends BaseEntity {
     private Date fechaPublicacion;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_categoria", nullable = false)
+    @JoinColumn(
+        name = "id_categoria",
+        nullable = false
+    )
     @Required
     private Editorial editorial;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_categoria", nullable = false)
+    @JoinColumn(
+        name = "id_categoria",
+        nullable = false
+    )
     @Required
     private Categoria categoria;
 
     @Override
     public String toString() {
-        return "Libro{" + "titulo='" + titulo + '\'' + ", autores=" + autores +
-               ", isbn='" + isbn + '\'' + ", fechaPublicacion=" +
-               fechaPublicacion + ", editorial=" + editorial + ", categoria=" +
-               categoria + '}';
+        return "Libro{" + "titulo='" + titulo + '\'' + ", autores=" + autores
+               + ", isbn='" + isbn + '\'' + ", fechaPublicacion="
+               + fechaPublicacion + ", editorial=" + editorial + ", categoria="
+               + categoria + '}';
     }
 }

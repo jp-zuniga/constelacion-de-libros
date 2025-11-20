@@ -12,7 +12,11 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 public class Editorial extends BaseEntity {
-    @Column(length = 100, nullable = false, unique = true)
+    @Column(
+        length = 100,
+        nullable = false,
+        unique = true
+    )
     @Required
     private String nombre;
 

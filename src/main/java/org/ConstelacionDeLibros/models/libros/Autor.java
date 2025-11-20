@@ -15,21 +15,30 @@ import java.util.Set;
 @Getter
 @Setter
 public class Autor extends BaseEntity {
-    @Column(length = 80, nullable = false)
+    @Column(
+        length = 80,
+        nullable = false
+    )
     @Required
     private String nombres;
 
-    @Column(length = 80, nullable = false)
+    @Column(
+        length = 80,
+        nullable = false
+    )
     @Required
     private String apellidos;
 
     @Column(nullable = true)
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "libro")
+    @ManyToMany(
+        fetch = FetchType.LAZY,
+        mappedBy = "libro"
+    )
     private Set<Libro> libros = null;
 
     @Override
     public String toString() {
-        return "Autor{" + "nombres='" + nombres + '\'' + ", apellidos='" +
-               apellidos + '\'' + ", libros=" + libros + '}';
+        return "Autor{" + "nombres='" + nombres + '\'' + ", apellidos='"
+               + apellidos + '\'' + ", libros=" + libros + '}';
     }
 }

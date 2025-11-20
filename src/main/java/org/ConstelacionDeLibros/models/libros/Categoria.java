@@ -12,7 +12,11 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 public class Categoria extends BaseEntity {
-    @Column(length = 60, nullable = false, unique = true)
+    @Column(
+        length = 60,
+        nullable = false,
+        unique = true
+    )
     @Required
     private String nombre;
 

@@ -12,7 +12,11 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 public class Sala extends BaseEntity {
-    @Column(length = 10, nullable = true, unique = true)
+    @Column(
+        length = 10,
+        nullable = true,
+        unique = true
+    )
     @Required
     private String nombre;
 

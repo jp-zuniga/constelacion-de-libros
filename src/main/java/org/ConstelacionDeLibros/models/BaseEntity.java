@@ -16,7 +16,10 @@ import javax.persistence.MappedSuperclass;
 public class BaseEntity {
     @Id
     @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GenericGenerator(
+        name = "system-uuid",
+        strategy = "uuid"
+    )
     @Column(length = 32)
     @Hidden
     private String id;

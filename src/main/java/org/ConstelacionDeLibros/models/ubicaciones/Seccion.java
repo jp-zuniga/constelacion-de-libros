@@ -12,7 +12,11 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 public class Seccion extends BaseEntity {
-    @Column(length = 10, nullable = false, unique = true)
+    @Column(
+        length = 10,
+        nullable = false,
+        unique = true
+    )
     @Required
     private String nombre;
 
