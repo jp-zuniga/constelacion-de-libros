@@ -27,7 +27,7 @@ Todas las clases heredan de la clase `BaseEntity` para estandarizar el manejo de
 
 ## 5.2. Diagrama
 
-![Diagrama de clases.](diagrama-de-clases.svg)
+![Diagrama de clases.](diagramas/clases.svg)
 
 ---
 
