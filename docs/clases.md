@@ -1,8 +1,8 @@
-# Diagrama de Clases
+# 5. Diagrama de Clases
 
 Este diagrama de clases describe la jerarquía de las clases del proyecto y las relaciones entre ellas. Puede encontrar una versión PNG para descargar [aquí](diagrama-de-clases.png).
 
-## Resumen
+## 5.1. Resumen
 
 Todas las clases heredan de la clase `BaseEntity` para estandarizar el manejo de la llave primaria como UUIDs.
 
@@ -25,4 +25,10 @@ Todas las clases heredan de la clase `BaseEntity` para estandarizar el manejo de
 
 ---
 
+## 5.2. Diagrama
+
 ![Diagrama de clases.](diagrama-de-clases.svg)
+
+---
+
+[Regresar a índice global.](README.md)
