@@ -10,33 +10,23 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Estante extends BaseEntity {
+public
+class Estante extends BaseEntity {
     @Column(
-        length = 50,
-        nullable = false,
-        unique = true
+        length = 50, nullable = false, unique = true
     )
     private String nombre;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-        name = "id_sala",
-        nullable = false
+        name = "id_sala", nullable = false
     )
     @Required
     private Sala sala;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-        name = "id_seccion",
-        nullable = false
-    )
-    @Required
-    private Seccion seccion;
-
     @Override
-    public String toString() {
-        return "Estante{" + "nombre='" + nombre + '\'' + ", sala=" + sala
-               + ", seccion=" + seccion + '}';
+    public
+    String toString() {
+        return "Estante{" + "nombre='" + nombre + '\'' + ", sala=" + sala + '}';
     }
 }
