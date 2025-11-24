@@ -9,36 +9,36 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-public class Autor extends BaseEntity {
+public
+class Autor extends BaseEntity {
+
     @Column(
-        length = 80,
-        nullable = false
+        length = 80, nullable = false
     )
     @Required
     private String nombres;
 
     @Column(
-        length = 80,
-        nullable = false
+        length = 80, nullable = false
     )
     @Required
     private String apellidos;
 
-    @Column(nullable = true)
     @ManyToMany(
-        fetch = FetchType.LAZY,
-        mappedBy = "libro"
+        fetch = FetchType.LAZY, mappedBy = "autores"
     )
-    private Set<Libro> libros = null;
+    private Set<Libro> libros = new HashSet<>();
 
     @Override
-    public String toString() {
+    public
+    String toString() {
         return "Autor{" + "nombres='" + nombres + '\'' + ", apellidos='"
-               + apellidos + '\'' + ", libros=" + libros + '}';
+               + apellidos + '\'' + '}';
     }
 }

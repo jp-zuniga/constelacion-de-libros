@@ -7,19 +7,21 @@
 
     <persistence-unit name="default">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <non-jta-data-source>java://comp/env/jdbc/librosDS</non-jta-data-source>
+        <non-jta-data-source>java:comp/env/jdbc/librosDS</non-jta-data-source>
+
         <class>org.ConstelacionDeLibros.models.libros.Autor</class>
         <class>org.ConstelacionDeLibros.models.libros.Categoria</class>
         <class>org.ConstelacionDeLibros.models.libros.Editorial</class>
         <class>org.ConstelacionDeLibros.models.libros.Ejemplar</class>
         <class>org.ConstelacionDeLibros.models.libros.EstadoEjemplar</class>
         <class>org.ConstelacionDeLibros.models.libros.Libro</class>
+
         <class>org.ConstelacionDeLibros.models.ubicaciones.Estante</class>
         <class>org.ConstelacionDeLibros.models.ubicaciones.EstanteColumna</class>
         <class>org.ConstelacionDeLibros.models.ubicaciones.EstanteFila</class>
         <class>org.ConstelacionDeLibros.models.ubicaciones.Sala</class>
-        <class>org.ConstelacionDeLibros.models.ubicaciones.Seccion</class>
         <class>org.ConstelacionDeLibros.models.ubicaciones.UbicacionLibro</class>
+
         <class>org.openxava.session.GalleryImage</class>
         <class>org.openxava.web.editors.DiscussionComment</class>
         <class>com.openxava.naviox.model.ConfigurationRecord</class>
@@ -33,6 +35,7 @@
         <class>com.openxava.naviox.model.SSORecord</class>
         <class>com.openxava.naviox.model.User</class>
         <class>com.openxava.naviox.model.LDAPConfiguration</class>
+
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="update"/>
         </properties>

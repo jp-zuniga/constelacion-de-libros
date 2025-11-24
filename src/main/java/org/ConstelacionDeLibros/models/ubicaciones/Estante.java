@@ -12,9 +12,11 @@ import javax.persistence.*;
 @Setter
 public
 class Estante extends BaseEntity {
+
     @Column(
         length = 50, nullable = false, unique = true
     )
+    @Required
     private String nombre;
 
     @ManyToOne(fetch = FetchType.LAZY)

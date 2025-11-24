@@ -6,60 +6,59 @@ import org.ConstelacionDeLibros.models.BaseEntity;
 import org.openxava.annotations.Required;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-public class Libro extends BaseEntity {
+public
+class Libro extends BaseEntity {
+
     @Column(
-        length = 120,
-        nullable = false
+        length = 120, nullable = false
     )
     @Required
     private String titulo;
 
-    @Column(nullable = false)
-    @ManyToMany(
-        fetch = FetchType.LAZY,
-        mappedBy = "autor"
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "libro_autor",
+        joinColumns = @JoinColumn(name = "libro_id"),
+        inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
-    private Set<Autor> autores;
+    private Set<Autor> autores = new HashSet<>();
 
     @Column(
-        length = 20,
-        nullable = false,
-        unique = true
+        length = 20, nullable = false, unique = true
     )
     @Required
     private String isbn;
 
     @Column(nullable = false)
     @Required
-    private Date fechaPublicacion;
+    private Integer anioPublicacion;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-        name = "id_categoria",
-        nullable = false
+        name = "id_editorial", nullable = false
     )
     @Required
     private Editorial editorial;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-        name = "id_categoria",
-        nullable = false
+        name = "id_categoria", nullable = false
     )
     @Required
     private Categoria categoria;
 
     @Override
-    public String toString() {
+    public
+    String toString() {
         return "Libro{" + "titulo='" + titulo + '\'' + ", autores=" + autores
-               + ", isbn='" + isbn + '\'' + ", fechaPublicacion="
-               + fechaPublicacion + ", editorial=" + editorial + ", categoria="
+               + ", isbn='" + isbn + '\'' + ", anioPublicacion="
+               + anioPublicacion + ", editorial=" + editorial + ", categoria="
                + categoria + '}';
     }
 }

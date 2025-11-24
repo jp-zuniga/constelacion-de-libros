@@ -11,17 +11,18 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
-public class Sala extends BaseEntity {
+public
+class Sala extends BaseEntity {
+
     @Column(
-        length = 10,
-        nullable = true,
-        unique = true
+        length = 10, nullable = false, unique = true
     )
     @Required
     private String nombre;
 
     @Override
-    public String toString() {
+    public
+    String toString() {
         return "Sala{" + "nombre='" + nombre + '\'' + '}';
     }
 }
