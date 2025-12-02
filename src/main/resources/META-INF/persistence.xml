@@ -13,7 +13,6 @@
         <class>org.ConstelacionDeLibros.models.libros.Categoria</class>
         <class>org.ConstelacionDeLibros.models.libros.Editorial</class>
         <class>org.ConstelacionDeLibros.models.libros.Ejemplar</class>
-        <class>org.ConstelacionDeLibros.models.libros.EstadoEjemplar</class>
         <class>org.ConstelacionDeLibros.models.libros.Libro</class>
 
         <class>org.ConstelacionDeLibros.models.ubicaciones.Estante</class>
@@ -21,6 +20,10 @@
         <class>org.ConstelacionDeLibros.models.ubicaciones.EstanteFila</class>
         <class>org.ConstelacionDeLibros.models.ubicaciones.Sala</class>
         <class>org.ConstelacionDeLibros.models.ubicaciones.UbicacionLibro</class>
+
+        <class>org.ConstelacionDeLibros.models.usuarios.Cliente</class>
+
+        <class>org.ConstelacionDeLibros.models.reservas.Reserva</class>
 
         <class>org.openxava.session.GalleryImage</class>
         <class>org.openxava.web.editors.DiscussionComment</class>

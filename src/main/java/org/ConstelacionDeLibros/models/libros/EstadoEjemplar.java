@@ -8,27 +8,10 @@ import org.openxava.annotations.Required;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity
-@Getter
-@Setter
-public class EstadoEjemplar extends BaseEntity {
-    @Column(
-        length = 30,
-        nullable = false,
-        unique = true
-    )
-    @Required
-    private String nombre;
-
-    @Column(
-        length = 120,
-        nullable = true
-    )
-    private String descripcion;
-
-    @Override
-    public String toString() {
-        return "EstadoEjemplar{" + "nombre='" + nombre + '\''
-               + ", descripcion='" + descripcion + '\'' + '}';
-    }
+public enum EstadoEjemplar{
+    DISPONIBLE,
+    PRESTADO,
+    EN_REPARACION,
+    PERDIDO,
+    BAJA
 }

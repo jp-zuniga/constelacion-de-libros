@@ -28,10 +28,8 @@ class Ejemplar extends BaseEntity {
     @Required
     private UbicacionLibro ubicacion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-        name = "id_estado_ejemplar", nullable = false
-    )
+    @Column(length = 20, nullable = false)
+    @Enumerated(EnumType.STRING)
     @Required
     private EstadoEjemplar estado;
 

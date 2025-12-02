@@ -4,41 +4,32 @@ import lombok.Getter;
 import lombok.Setter;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.openxava.annotations.Required;
+import org.openxava.annotations.ListProperties;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-public
-class Autor extends BaseEntity {
+public class Autor extends BaseEntity {
 
-    @Column(
-        length = 80, nullable = false
-    )
+    @Column(length = 80, nullable = false)
     @Required
     private String nombres;
 
-    @Column(
-        length = 80, nullable = false
-    )
+    @Column(length = 80, nullable = false)
     @Required
     private String apellidos;
 
-    @ManyToMany(
-        fetch = FetchType.LAZY, mappedBy = "autores"
-    )
+    //lean sobre esto en libro porfa
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "autores")
+    @ListProperties("titulo, isbn, anioPublicacion, editorial.nombre")
     private Set<Libro> libros = new HashSet<>();
 
     @Override
-    public
-    String toString() {
-        return "Autor{" + "nombres='" + nombres + '\'' + ", apellidos='"
-               + apellidos + '\'' + '}';
+    public String toString() {
+        return nombres + " " + apellidos;
     }
 }
