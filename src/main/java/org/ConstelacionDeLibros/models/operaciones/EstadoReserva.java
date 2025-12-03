@@ -1,4 +1,4 @@
-package org.ConstelacionDeLibros.models.reservas;
+package org.ConstelacionDeLibros.models.operaciones;
 
 public enum EstadoReserva {
     ACTIVA,

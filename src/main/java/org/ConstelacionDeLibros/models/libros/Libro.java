@@ -52,6 +52,13 @@ public class Libro extends BaseEntity {
 
     @Override
     public String toString() {
-        return titulo;
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autores=" + autores +
+                ", isbn='" + isbn + '\'' +
+                ", anioPublicacion=" + anioPublicacion +
+                ", editorial=" + editorial +
+                ", categoria=" + categoria +
+                '}';
     }
 }

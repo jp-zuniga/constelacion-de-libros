@@ -1,4 +1,4 @@
-package org.ConstelacionDeLibros.models.reservas;
+package org.ConstelacionDeLibros.models.operaciones;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,6 +7,7 @@ import org.ConstelacionDeLibros.models.libros.Ejemplar;
 import org.ConstelacionDeLibros.models.libros.Libro;
 import org.ConstelacionDeLibros.models.usuarios.Cliente;
 
+import org.ConstelacionDeLibros.models.usuarios.Empleado;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentDateCalculator;
 
@@ -20,24 +21,28 @@ public class Reserva extends BaseEntity {
 
     @Column(nullable = false)
     @Required
-    @DefaultValueCalculator(CurrentDateCalculator.class) // Pone la fecha de hoy por defecto
+    @DefaultValueCalculator(CurrentDateCalculator.class)
     private LocalDate fechaReserva;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente", nullable = false)
     @Required
-    @ReferenceView("Simple") // Opcional: Para ver una vista resumida si la defines
     private Cliente cliente;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_empleado", nullable = false)
+    @Required
+    @DescriptionsList(descriptionProperties = "nombres, apellidos")
+    private Empleado atendidoPor;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_libro", nullable = false)
     @Required
-    @DescriptionsList(descriptionProperties = "titulo") // Muestra el título en el desplegable
+    @DescriptionsList(descriptionProperties = "titulo")
     private Libro libro;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_ejemplar")
-    // No es @Required porque a veces reservas solo el libro y el ejemplar se asigna después
     private Ejemplar ejemplar;
 
     @Column(length = 20, nullable = false)
@@ -47,7 +52,13 @@ public class Reserva extends BaseEntity {
 
     @Override
     public String toString() {
-        // Muestra algo como: "Reserva de Don Quijote (2025-12-01)"
-        return "Reserva de " + (libro != null ? libro.getTitulo() : "Libro") + " (" + fechaReserva + ")";
+        return "Reserva{" +
+                "fechaReserva=" + fechaReserva +
+                ", cliente=" + cliente +
+                ", atendidoPor=" + atendidoPor +
+                ", libro=" + libro +
+                ", ejemplar=" + ejemplar +
+                ", estado=" + estado +
+                '}';
     }
 }

@@ -22,8 +22,9 @@
         <class>org.ConstelacionDeLibros.models.ubicaciones.UbicacionLibro</class>
 
         <class>org.ConstelacionDeLibros.models.usuarios.Cliente</class>
+        <class>org.ConstelacionDeLibros.models.usuarios.Empleado</class>
 
-        <class>org.ConstelacionDeLibros.models.reservas.Reserva</class>
+        <class>org.ConstelacionDeLibros.models.operaciones.Reserva</class>
 
         <class>org.openxava.session.GalleryImage</class>
         <class>org.openxava.web.editors.DiscussionComment</class>

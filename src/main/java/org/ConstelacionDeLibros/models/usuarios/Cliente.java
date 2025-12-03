@@ -3,7 +3,7 @@ package org.ConstelacionDeLibros.models.usuarios;
 import lombok.Getter;
 import lombok.Setter;
 import org.ConstelacionDeLibros.models.BaseEntity;
-import org.ConstelacionDeLibros.models.reservas.Reserva;
+import org.ConstelacionDeLibros.models.operaciones.Reserva;
 import org.openxava.annotations.*;
 
 import javax.persistence.*;
@@ -16,7 +16,7 @@ public class Cliente extends BaseEntity {
 
     @Column(length = 20, nullable = false, unique = true)
     @Required
-    private String cedula; //no estoy segura de esto pero lo puse asi pq asi esta en el documetno. corrijan si quieren
+    private String cedula;
 
     @Column(length = 80, nullable = false)
     @Required
@@ -45,6 +45,14 @@ public class Cliente extends BaseEntity {
 
     @Override
     public String toString() {
-        return nombres + " " + apellidos;
+        return "Cliente{" +
+                "cedula='" + cedula + '\'' +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", reservas=" + reservas +
+                '}';
     }
 }
