@@ -33,17 +33,12 @@ class Ejemplar extends BaseEntity {
     @Required
     private EstadoEjemplar estado;
 
-    @Column(
-        length = 40, nullable = false, unique = true
-    )
-    @Required
-    private String codigoBarra;
-
     @Override
-    public
-    String toString() {
-        return "Ejemplar{" + "libro=" + libro + ", ubicacion=" + ubicacion
-               + ", estado=" + estado + ", codigoBarra='" + codigoBarra + '\''
-               + '}';
+    public String toString() {
+        return "Ejemplar{" +
+                "libro=" + libro +
+                ", ubicacion=" + ubicacion +
+                ", estado=" + estado +
+                '}';
     }
 }
