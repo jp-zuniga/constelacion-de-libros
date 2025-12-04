@@ -19,9 +19,6 @@ public class Libro extends BaseEntity {
     @Required
     private String titulo;
 
-    /*deje la relacion en los dos pq si solo la dejaba aqui, cuando abria un libro podia ver
-    * todos los autores del libro pero si abro autor no me enseñaba los libros del autor, entonces
-    * lo deje asi pero corrijanme si me equivoco*/
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "libro_autor",
