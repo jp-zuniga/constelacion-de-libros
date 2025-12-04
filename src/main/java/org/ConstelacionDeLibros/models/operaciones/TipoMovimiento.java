@@ -1,6 +1,7 @@
 package org.ConstelacionDeLibros.models.operaciones;
 
-public enum TipoMovimiento {
+public
+enum TipoMovimiento {
     ENTRADA,
     SALIDA,
     PERDIDA,

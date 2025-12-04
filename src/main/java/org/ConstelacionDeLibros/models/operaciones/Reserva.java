@@ -6,9 +6,10 @@ import org.ConstelacionDeLibros.models.BaseEntity;
 import org.ConstelacionDeLibros.models.libros.Ejemplar;
 import org.ConstelacionDeLibros.models.libros.Libro;
 import org.ConstelacionDeLibros.models.usuarios.Cliente;
-
 import org.ConstelacionDeLibros.models.usuarios.Empleado;
-import org.openxava.annotations.*;
+import org.openxava.annotations.DefaultValueCalculator;
+import org.openxava.annotations.DescriptionsList;
+import org.openxava.annotations.Required;
 import org.openxava.calculators.CurrentDateCalculator;
 
 import javax.persistence.*;
@@ -17,8 +18,8 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
-public class Reserva extends BaseEntity {
-
+public
+class Reserva extends BaseEntity {
     @Column(nullable = false)
     @Required
     @DefaultValueCalculator(CurrentDateCalculator.class)
@@ -51,14 +52,10 @@ public class Reserva extends BaseEntity {
     private EstadoReserva estado;
 
     @Override
-    public String toString() {
-        return "Reserva{" +
-                "fechaReserva=" + fechaReserva +
-                ", cliente=" + cliente +
-                ", atendidoPor=" + atendidoPor +
-                ", libro=" + libro +
-                ", ejemplar=" + ejemplar +
-                ", estado=" + estado +
-                '}';
+    public
+    String toString() {
+        return "Reserva{" + "fechaReserva=" + fechaReserva + ", cliente="
+               + cliente + ", atendidoPor=" + atendidoPor + ", libro=" + libro
+               + ", ejemplar=" + ejemplar + ", estado=" + estado + '}';
     }
 }

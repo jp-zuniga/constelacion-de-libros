@@ -13,7 +13,6 @@ import javax.persistence.*;
 @Setter
 public
 class Ejemplar extends BaseEntity {
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
         name = "id_libro", nullable = false
@@ -34,11 +33,9 @@ class Ejemplar extends BaseEntity {
     private EstadoEjemplar estado;
 
     @Override
-    public String toString() {
-        return "Ejemplar{" +
-                "libro=" + libro +
-                ", ubicacion=" + ubicacion +
-                ", estado=" + estado +
-                '}';
+    public
+    String toString() {
+        return "Ejemplar{" + "libro=" + libro + ", ubicacion=" + ubicacion
+               + ", estado=" + estado + '}';
     }
 }

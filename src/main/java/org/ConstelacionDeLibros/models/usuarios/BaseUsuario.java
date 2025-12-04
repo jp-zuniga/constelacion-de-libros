@@ -7,12 +7,12 @@ import org.openxava.annotations.Required;
 import org.openxava.annotations.Stereotype;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 @Getter
 @Setter
-public
+public abstract
 class BaseUsuario extends BaseEntity {
     @Column(length = 20, nullable = false, unique = true)
     @Required

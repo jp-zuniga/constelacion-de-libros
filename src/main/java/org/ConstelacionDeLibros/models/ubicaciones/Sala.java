@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 @Setter
 public
 class Sala extends BaseEntity {
-
     @Column(
         length = 10, nullable = false, unique = true
     )

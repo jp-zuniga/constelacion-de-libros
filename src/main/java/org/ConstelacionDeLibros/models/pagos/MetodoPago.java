@@ -1,6 +1,7 @@
 package org.ConstelacionDeLibros.models.pagos;
 
-public enum MetodoPago {
+public
+enum MetodoPago {
     TARJETA,
     EFETIVO,
     TRANSFERENCIA

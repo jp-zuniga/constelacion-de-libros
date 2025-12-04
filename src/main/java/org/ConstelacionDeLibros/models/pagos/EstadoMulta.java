@@ -1,6 +1,7 @@
 package org.ConstelacionDeLibros.models.pagos;
 
-public enum EstadoMulta {
+public
+enum EstadoMulta {
     PAGADA,
     PENDIENTE
 }

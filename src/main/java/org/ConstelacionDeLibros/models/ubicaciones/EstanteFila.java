@@ -10,11 +10,11 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class EstanteFila extends BaseEntity {
+public
+class EstanteFila extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-        name = "id_estante",
-        nullable = false
+        name = "id_estante", nullable = false
     )
     @Required
     private Estante estante;
@@ -24,7 +24,8 @@ public class EstanteFila extends BaseEntity {
     private Integer numero;
 
     @Override
-    public String toString() {
+    public
+    String toString() {
         return "EstanteFila{" + "estante=" + estante + ", numero=" + numero
                + '}';
     }

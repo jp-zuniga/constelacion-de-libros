@@ -11,17 +11,17 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
-public class Categoria extends BaseEntity {
+public
+class Categoria extends BaseEntity {
     @Column(
-        length = 60,
-        nullable = false,
-        unique = true
+        length = 60, nullable = false, unique = true
     )
     @Required
     private String nombre;
 
     @Override
-    public String toString() {
+    public
+    String toString() {
         return "Categoria{" + "nombre='" + nombre + '\'' + '}';
     }
 }

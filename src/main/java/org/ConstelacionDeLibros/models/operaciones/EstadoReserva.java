@@ -1,6 +1,7 @@
 package org.ConstelacionDeLibros.models.operaciones;
 
-public enum EstadoReserva {
+public
+enum EstadoReserva {
     ACTIVA,
     ATENDIDA,
     CANCELADA

@@ -13,12 +13,12 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 @Getter
 @Setter
-public class BaseEntity {
+public
+class BaseEntity {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(
-        name = "system-uuid",
-        strategy = "uuid"
+        name = "system-uuid", strategy = "uuid"
     )
     @Column(length = 32)
     @Hidden
