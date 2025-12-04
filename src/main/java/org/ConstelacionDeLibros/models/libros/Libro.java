@@ -3,7 +3,7 @@ package org.ConstelacionDeLibros.models.libros;
 import lombok.Getter;
 import lombok.Setter;
 import org.ConstelacionDeLibros.models.BaseEntity;
-import org.openxava.annotations.ListProperties;
+import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Required;
 
 import javax.persistence.*;
@@ -25,8 +25,9 @@ class Libro extends BaseEntity {
         joinColumns = @JoinColumn(name = "libro_id"),
         inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
-
-    @ListProperties("nombres, apellidos")
+    @DescriptionsList(
+        descriptionProperties = "nombres, apellidos", showReferenceView = true
+    )
     private Set<Autor> autores = new HashSet<>();
 
     @Column(length = 20, nullable = false, unique = true)
@@ -40,11 +41,13 @@ class Libro extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_editorial", nullable = false)
     @Required
+    @DescriptionsList(descriptionProperties = "nombre")
     private Editorial editorial;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria", nullable = false)
     @Required
+    @DescriptionsList(descriptionProperties = "nombre")
     private Categoria categoria;
 
     @Override
