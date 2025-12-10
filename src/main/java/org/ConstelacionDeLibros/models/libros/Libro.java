@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Required;
+import org.openxava.annotations.Tab;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,6 +14,10 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@Tab(
+    properties = "titulo, isbn, editorial.nombre, categoria.nombre, "
+                 + "anioPublicacion, autoresNombres"
+)
 public
 class Libro extends BaseEntity {
     @Column(length = 120, nullable = false)

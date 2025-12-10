@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.ConstelacionDeLibros.models.operaciones.Reserva;
 import org.openxava.annotations.ListProperties;
 import org.openxava.annotations.Stereotype;
+import org.openxava.annotations.Tab;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import java.util.Collection;
 @Entity
 @Getter
 @Setter
+@Tab(properties = "cedula, nombres, apellidos, email, telefono, direccion")
 public
 class Cliente extends BaseUsuario {
     @Column(length = 255)

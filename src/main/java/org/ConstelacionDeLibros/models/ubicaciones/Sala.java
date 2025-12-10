@@ -19,6 +19,11 @@ class Sala extends BaseEntity {
     @Required
     private String nombre;
 
+    public
+    String getNombre() {
+        return nombre;
+    }
+
     @Override
     public
     String toString() {

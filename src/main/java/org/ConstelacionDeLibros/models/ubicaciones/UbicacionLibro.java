@@ -27,7 +27,16 @@ class UbicacionLibro extends BaseEntity {
     @Override
     public
     String toString() {
-        return "UbicacionLibro{" + "columna=" + columna + ", observacion='"
-               + observacion + '\'' + '}';
+        String ruta = "";
+
+        if (columna != null) {
+            String sala = columna.getFila().getEstante().getSala().getNombre();
+            ruta = sala + ": " + columna.toString();
+        }
+
+        return ruta + (
+            observacion != null && ! observacion.isEmpty() ? " (" + observacion
+                                                             + ")" : ""
+        );
     }
 }

@@ -23,6 +23,16 @@ class EstanteFila extends BaseEntity {
     @Required
     private Integer numero;
 
+    public
+    Estante getEstante() {
+        return estante;
+    }
+
+    public
+    Integer getNumero() {
+        return numero;
+    }
+
     @Override
     public
     String toString() {

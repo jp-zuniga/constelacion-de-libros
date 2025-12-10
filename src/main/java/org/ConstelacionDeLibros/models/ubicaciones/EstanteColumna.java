@@ -23,9 +23,22 @@ class EstanteColumna extends BaseEntity {
     @Required
     private Integer numero;
 
+    public
+    EstanteFila getFila() {
+        return fila;
+    }
+
+    public
+    Integer getNumero() {
+        return numero;
+    }
+
     @Override
     public
     String toString() {
-        return "EstanteColumna{" + "fila=" + fila + ", numero=" + numero + '}';
+        return (
+                   fila != null ? fila.getEstante().getNombre() + " - Fila "
+                                  + fila.getNumero() : ""
+               ) + " - Col " + numero;
     }
 }

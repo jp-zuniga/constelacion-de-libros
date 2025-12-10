@@ -2,6 +2,9 @@ package org.ConstelacionDeLibros.models.operaciones;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.ConstelacionDeLibros.config.Auditable;
+import org.ConstelacionDeLibros.config.Auditoria;
+import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.ConstelacionDeLibros.models.libros.Ejemplar;
 import org.ConstelacionDeLibros.models.libros.Libro;
@@ -16,10 +19,14 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@EntityListeners(AuditoriaListener.class)
 @Getter
 @Setter
 public
-class Reserva extends BaseEntity {
+class Reserva extends BaseEntity implements Auditable {
+    @Embedded
+    private Auditoria auditoria;
+
     @Column(nullable = false)
     @Required
     @DefaultValueCalculator(CurrentDateCalculator.class)
@@ -50,6 +57,18 @@ class Reserva extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Required
     private EstadoReserva estado;
+
+    @Override
+    public
+    Auditoria getAuditoria() {
+        return auditoria;
+    }
+
+    @Override
+    public
+    void setAuditoria(Auditoria auditoria) {
+        this.auditoria = auditoria;
+    }
 
     @Override
     public

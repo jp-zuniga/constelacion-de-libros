@@ -25,6 +25,16 @@ class Estante extends BaseEntity {
     @Required
     private Sala sala;
 
+    public
+    String getNombre() {
+        return nombre;
+    }
+
+    public
+    Sala getSala() {
+        return sala;
+    }
+
     @Override
     public
     String toString() {
