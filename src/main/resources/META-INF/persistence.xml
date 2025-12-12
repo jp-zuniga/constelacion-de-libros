@@ -28,6 +28,9 @@
         <class>org.ConstelacionDeLibros.models.operaciones.Prestamo</class>
         <class>org.ConstelacionDeLibros.models.operaciones.Reserva</class>
 
+        <class>org.ConstelacionDeLibros.models.pagos.Deuda</class>
+        <class>org.ConstelacionDeLibros.models.pagos.Multa</class>
+
         <class>org.openxava.session.GalleryImage</class>
         <class>org.openxava.web.editors.DiscussionComment</class>
         <class>com.openxava.naviox.model.ConfigurationRecord</class>
