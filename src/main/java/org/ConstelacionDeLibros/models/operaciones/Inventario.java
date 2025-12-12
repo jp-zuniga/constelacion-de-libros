@@ -26,12 +26,10 @@ class Inventario extends BaseEntity implements Auditable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_libro", nullable = false)
-    @Required
     private Libro libro;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_ejemplar", nullable = false)
-    @Required
     private Ejemplar ejemplar;
 
     @Column(length = 10, nullable = false)

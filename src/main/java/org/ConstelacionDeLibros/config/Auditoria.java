@@ -1,14 +1,23 @@
 package org.ConstelacionDeLibros.config;
 
+import org.openxava.annotations.Hidden;
+
 import javax.persistence.Embeddable;
 import java.time.LocalDate;
 
 @Embeddable
 public
 class Auditoria {
+    @Hidden
     private String usuarioIng;
+
+    @Hidden
     private String usuarioAct;
+
+    @Hidden
     private LocalDate fechaIng;
+
+    @Hidden
     private LocalDate fechaAct;
 
     public
