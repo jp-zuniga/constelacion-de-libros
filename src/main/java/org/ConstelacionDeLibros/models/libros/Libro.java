@@ -30,9 +30,10 @@ class Libro extends BaseEntity {
         joinColumns = @JoinColumn(name = "libro_id"),
         inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
-    @DescriptionsList(
-        descriptionProperties = "nombres, apellidos", showReferenceView = true
-    )
+    // @DescriptionsList(
+    //     descriptionProperties = "nombres, apellidos", showReferenceView =
+    //     true
+    // )
     private Set<Autor> autores = new HashSet<>();
 
     @Column(length = 20, nullable = false, unique = true)
