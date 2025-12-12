@@ -7,7 +7,6 @@ import org.ConstelacionDeLibros.config.Auditoria;
 import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.ConstelacionDeLibros.models.ubicaciones.UbicacionLibro;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 
 import javax.persistence.*;
@@ -19,7 +18,6 @@ import javax.persistence.*;
 public
 class Ejemplar extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @ManyToOne(fetch = FetchType.LAZY)

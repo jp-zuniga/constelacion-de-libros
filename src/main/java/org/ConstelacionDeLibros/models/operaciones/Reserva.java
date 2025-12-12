@@ -12,7 +12,6 @@ import org.ConstelacionDeLibros.models.usuarios.Cliente;
 import org.ConstelacionDeLibros.models.usuarios.Empleado;
 import org.openxava.annotations.DefaultValueCalculator;
 import org.openxava.annotations.DescriptionsList;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 import org.openxava.calculators.CurrentDateCalculator;
 
@@ -26,7 +25,6 @@ import java.time.LocalDate;
 public
 class Reserva extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @Column(nullable = false)

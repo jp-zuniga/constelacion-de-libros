@@ -9,7 +9,6 @@ import org.ConstelacionDeLibros.models.BaseEntity;
 import org.ConstelacionDeLibros.models.libros.Ejemplar;
 import org.ConstelacionDeLibros.models.libros.Libro;
 import org.openxava.annotations.DefaultValueCalculator;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 import org.openxava.calculators.CurrentDateCalculator;
 
@@ -23,7 +22,6 @@ import java.time.LocalDate;
 public
 class Inventario extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @ManyToOne(fetch = FetchType.LAZY)

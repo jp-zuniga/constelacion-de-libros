@@ -5,7 +5,6 @@ import lombok.Setter;
 import org.ConstelacionDeLibros.config.Auditable;
 import org.ConstelacionDeLibros.config.Auditoria;
 import org.ConstelacionDeLibros.models.BaseEntity;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 
 import javax.persistence.*;
@@ -16,7 +15,6 @@ import javax.persistence.*;
 public
 class Estante extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @Column(

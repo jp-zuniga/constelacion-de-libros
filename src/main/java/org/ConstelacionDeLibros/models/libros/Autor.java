@@ -6,7 +6,6 @@ import org.ConstelacionDeLibros.config.Auditable;
 import org.ConstelacionDeLibros.config.Auditoria;
 import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.ListProperties;
 import org.openxava.annotations.Required;
 
@@ -21,7 +20,6 @@ import java.util.Set;
 public
 class Autor extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @Column(length = 80, nullable = false)

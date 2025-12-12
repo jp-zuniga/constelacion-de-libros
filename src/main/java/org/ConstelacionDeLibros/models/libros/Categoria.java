@@ -6,7 +6,6 @@ import org.ConstelacionDeLibros.config.Auditable;
 import org.ConstelacionDeLibros.config.Auditoria;
 import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 
 import javax.persistence.Column;
@@ -21,7 +20,6 @@ import javax.persistence.EntityListeners;
 public
 class Categoria extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @Column(

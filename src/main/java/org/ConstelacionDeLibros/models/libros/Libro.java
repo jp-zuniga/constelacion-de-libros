@@ -7,7 +7,6 @@ import org.ConstelacionDeLibros.config.Auditoria;
 import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.openxava.annotations.DescriptionsList;
-import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.Tab;
 
@@ -26,7 +25,6 @@ import java.util.Set;
 public
 class Libro extends BaseEntity implements Auditable {
     @Embedded
-    @Hidden
     private Auditoria auditoria;
 
     @Column(length = 120, nullable = false)
