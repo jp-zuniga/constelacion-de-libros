@@ -2,8 +2,12 @@ package org.ConstelacionDeLibros.models.libros;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.ConstelacionDeLibros.config.Auditable;
+import org.ConstelacionDeLibros.config.Auditoria;
+import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.openxava.annotations.DescriptionsList;
+import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.Tab;
 
@@ -12,6 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@EntityListeners(AuditoriaListener.class)
 @Getter
 @Setter
 @Tab(
@@ -19,7 +24,11 @@ import java.util.Set;
                  + "anioPublicacion, autoresNombres"
 )
 public
-class Libro extends BaseEntity {
+class Libro extends BaseEntity implements Auditable {
+    @Embedded
+    @Hidden
+    private Auditoria auditoria;
+
     @Column(length = 120, nullable = false)
     @Required
     private String titulo;
@@ -55,6 +64,16 @@ class Libro extends BaseEntity {
     @Required
     @DescriptionsList(descriptionProperties = "nombre")
     private Categoria categoria;
+
+    public
+    Auditoria getAuditoria() {
+        return auditoria;
+    }
+
+    public
+    void setAuditoria(Auditoria auditoria) {
+        this.auditoria = auditoria;
+    }
 
     @Override
     public

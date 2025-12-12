@@ -7,11 +7,9 @@ import org.ConstelacionDeLibros.config.Auditoria;
 import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.ConstelacionDeLibros.models.libros.Ejemplar;
-import org.ConstelacionDeLibros.models.libros.Libro;
 import org.ConstelacionDeLibros.models.usuarios.Cliente;
 import org.ConstelacionDeLibros.models.usuarios.Empleado;
 import org.openxava.annotations.DefaultValueCalculator;
-import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Hidden;
 import org.openxava.annotations.Required;
 import org.openxava.calculators.CurrentDateCalculator;
@@ -24,15 +22,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public
-class Reserva extends BaseEntity implements Auditable {
+class Prestamo extends BaseEntity implements Auditable {
     @Embedded
     @Hidden
     private Auditoria auditoria;
-
-    @Column(nullable = false)
-    @Required
-    @DefaultValueCalculator(CurrentDateCalculator.class)
-    private LocalDate fechaReserva;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente", nullable = false)
@@ -40,25 +33,29 @@ class Reserva extends BaseEntity implements Auditable {
     private Cliente cliente;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_empleado", nullable = false)
+    @JoinColumn(name = "id_ejemplar", nullable = false)
     @Required
-    @DescriptionsList(descriptionProperties = "nombres, apellidos")
-    private Empleado atendidoPor;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_libro", nullable = false)
-    @Required
-    @DescriptionsList(descriptionProperties = "titulo")
-    private Libro libro;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_ejemplar")
     private Ejemplar ejemplar;
 
-    @Column(length = 20, nullable = false)
-    @Enumerated(EnumType.STRING)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_empleado", nullable = false)
     @Required
-    private EstadoReserva estado;
+    private Empleado empleado;
+
+    @Column(nullable = false)
+    @Required
+    @DefaultValueCalculator(CurrentDateCalculator.class)
+    private LocalDate fechaSalida;
+
+    @Column(nullable = false)
+    @Required
+    @DefaultValueCalculator(CurrentDateCalculator.class)
+    private LocalDate fechaCompromiso;
+
+    @Column(nullable = false)
+    @Required
+    @DefaultValueCalculator(CurrentDateCalculator.class)
+    private LocalDate fechaDevolucion;
 
     @Override
     public
@@ -75,8 +72,9 @@ class Reserva extends BaseEntity implements Auditable {
     @Override
     public
     String toString() {
-        return "Reserva{" + "fechaReserva=" + fechaReserva + ", cliente="
-               + cliente + ", atendidoPor=" + atendidoPor + ", libro=" + libro
-               + ", ejemplar=" + ejemplar + ", estado=" + estado + '}';
+        return "Prestamo{" + "cliente=" + cliente + ", ejemplar=" + ejemplar
+               + ", empleado=" + empleado + ", fechaSalida=" + fechaSalida
+               + ", fechaCompromiso=" + fechaCompromiso + ", fechaDevolucion="
+               + fechaDevolucion + '}';
     }
 }

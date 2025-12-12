@@ -25,6 +25,7 @@
         <class>org.ConstelacionDeLibros.models.usuarios.Empleado</class>
 
         <class>org.ConstelacionDeLibros.models.operaciones.Reserva</class>
+        <class>org.ConstelacionDeLibros.models.operaciones.Inventario</class>
 
         <class>org.openxava.session.GalleryImage</class>
         <class>org.openxava.web.editors.DiscussionComment</class>
