@@ -4,12 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import org.ConstelacionDeLibros.config.Auditable;
 import org.ConstelacionDeLibros.config.Auditoria;
+import org.ConstelacionDeLibros.config.AuditoriaListener;
 import org.ConstelacionDeLibros.models.BaseEntity;
 import org.openxava.annotations.Required;
 
 import javax.persistence.*;
 
 @Entity
+@EntityListeners(AuditoriaListener.class)
 @Getter
 @Setter
 public
