@@ -12,7 +12,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 @Getter
 @Setter
-public abstract
+public
 class BaseUsuario extends BaseEntity {
     @Column(length = 20, nullable = false, unique = true)
     @Required

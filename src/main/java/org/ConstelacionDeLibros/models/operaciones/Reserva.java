@@ -23,7 +23,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public
-class  Reserva extends BaseEntity implements Auditable {
+class Reserva extends BaseEntity implements Auditable {
     @Embedded
     private Auditoria auditoria;
 

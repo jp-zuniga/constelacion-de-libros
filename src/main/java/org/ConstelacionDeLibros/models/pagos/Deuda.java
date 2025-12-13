@@ -15,10 +15,10 @@ import java.time.LocalDate;
 
 @Entity
 @EntityListeners(AuditoriaListener.class)
-@Getter @Setter
+@Getter
+@Setter
 public
 class Deuda extends BaseEntity implements Auditable {
-
     @Embedded
     private Auditoria auditoria;
 
@@ -51,13 +51,10 @@ class Deuda extends BaseEntity implements Auditable {
     }
 
     @Override
-    public String toString() {
-        return "Deuda{" +
-                "auditoria=" + auditoria +
-                ", cliente=" + cliente +
-                ", montoAdeudado=" + montoAdeudado +
-                ", fechaEmision=" + fechaEmision +
-                ", cancelada=" + cancelada +
-                '}';
+    public
+    String toString() {
+        return "Deuda{" + "auditoria=" + auditoria + ", cliente=" + cliente
+               + ", montoAdeudado=" + montoAdeudado + ", fechaEmision="
+               + fechaEmision + ", cancelada=" + cancelada + '}';
     }
 }
