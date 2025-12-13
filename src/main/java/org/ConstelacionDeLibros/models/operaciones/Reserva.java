@@ -73,8 +73,10 @@ class Reserva extends BaseEntity implements Auditable {
     @Override
     public
     String toString() {
-        return "Reserva{" + "fechaReserva=" + fechaReserva + ", cliente="
-               + cliente + ", atendidoPor=" + atendidoPor + ", libro=" + libro
-               + ", ejemplar=" + ejemplar + ", estado=" + estado + '}';
+        return "Reserva " + fechaReserva + " (" + (
+            cliente != null
+            ? cliente.getNombres()
+            : ""
+        ) + ")";
     }
 }

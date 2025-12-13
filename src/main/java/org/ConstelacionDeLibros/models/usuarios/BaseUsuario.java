@@ -34,6 +34,16 @@ class BaseUsuario extends BaseEntity {
     @Stereotype("EMAIL")
     private String email;
 
+    public
+    String getNombres() {
+        return nombres;
+    }
+
+    public
+    String getApellidos() {
+        return apellidos;
+    }
+
     @Override
     public
     String toString() {

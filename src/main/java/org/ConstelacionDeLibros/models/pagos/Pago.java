@@ -11,7 +11,7 @@ import org.ConstelacionDeLibros.models.usuarios.Empleado;
 import org.openxava.annotations.DefaultValueCalculator;
 import org.openxava.annotations.ListProperties;
 import org.openxava.annotations.Required;
-import org.openxava.calculators.CurrentDateCalculator;
+import org.openxava.calculators.CurrentLocalDateCalculator;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -48,7 +48,7 @@ class Pago extends BaseEntity implements Auditable {
 
     @Column(nullable = false)
     @Required
-    @DefaultValueCalculator(CurrentDateCalculator.class)
+    @DefaultValueCalculator(CurrentLocalDateCalculator.class)
     private LocalDate fechaPago;
 
     @Column(nullable = false, scale = 2)

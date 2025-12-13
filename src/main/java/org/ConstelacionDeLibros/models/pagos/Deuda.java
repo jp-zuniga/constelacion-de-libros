@@ -49,12 +49,13 @@ class Deuda extends BaseEntity implements Auditable {
     void setAuditoria(Auditoria auditoria) {
         this.auditoria = auditoria;
     }
-    
+
     @Override
     public
     String toString() {
-        return "Deuda{" + "auditoria=" + auditoria + ", cliente=" + cliente
-               + ", montoAdeudado=" + montoAdeudado + ", fechaEmision="
-               + fechaEmision + ", cancelada=" + cancelada + '}';
+        return (
+                   cliente != null ? cliente.getNombres() + " "
+                                     + cliente.getApellidos() : "Sin Cliente"
+               ) + " - " + montoAdeudado;
     }
 }

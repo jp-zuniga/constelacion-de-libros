@@ -44,10 +44,10 @@ class Cliente extends BaseUsuario implements Auditable {
         this.auditoria = auditoria;
     }
 
+
     @Override
     public
     String toString() {
-        return "Cliente{" + "direccion='" + direccion + '\'' + ", reservas="
-               + reservas + '}';
+        return getNombres() + " " + getApellidos();
     }
 }

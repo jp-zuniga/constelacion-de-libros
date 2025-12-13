@@ -52,8 +52,6 @@ class Multa extends BaseEntity implements Auditable {
     @Override
     public
     String toString() {
-        return "Multa{" + "auditoria=" + auditoria + ", prestamo=" + prestamo
-               + ", nombre='" + nombre + '\'' + ", descripcion='" + descripcion
-               + '\'' + ", estado=" + estado + '}';
+        return nombre + " (" + estado + ")";
     }
 }
