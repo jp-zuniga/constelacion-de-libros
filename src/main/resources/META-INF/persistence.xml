@@ -30,6 +30,9 @@
 
         <class>org.ConstelacionDeLibros.models.pagos.Deuda</class>
         <class>org.ConstelacionDeLibros.models.pagos.Multa</class>
+        <class>org.ConstelacionDeLibros.models.pagos.Pago</class>
+        <class>org.ConstelacionDeLibros.models.pagos.PagoDetalle</class>
+        <class>org.ConstelacionDeLibros.models.pagos.PagoAplicacion</class>
 
         <class>org.openxava.session.GalleryImage</class>
         <class>org.openxava.web.editors.DiscussionComment</class>
