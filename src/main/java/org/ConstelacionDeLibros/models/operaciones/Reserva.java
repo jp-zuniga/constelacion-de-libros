@@ -13,7 +13,7 @@ import org.ConstelacionDeLibros.models.usuarios.Empleado;
 import org.openxava.annotations.DefaultValueCalculator;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Required;
-import org.openxava.calculators.CurrentDateCalculator;
+import org.openxava.calculators.CurrentLocalDateCalculator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -29,7 +29,7 @@ class Reserva extends BaseEntity implements Auditable {
 
     @Column(nullable = false)
     @Required
-    @DefaultValueCalculator(CurrentDateCalculator.class)
+    @DefaultValueCalculator(CurrentLocalDateCalculator.class)
     private LocalDate fechaReserva;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -49,7 +49,7 @@ class Deuda extends BaseEntity implements Auditable {
     void setAuditoria(Auditoria auditoria) {
         this.auditoria = auditoria;
     }
-
+    
     @Override
     public
     String toString() {

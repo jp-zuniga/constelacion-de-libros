@@ -10,7 +10,7 @@ import org.ConstelacionDeLibros.models.libros.Ejemplar;
 import org.ConstelacionDeLibros.models.libros.Libro;
 import org.openxava.annotations.DefaultValueCalculator;
 import org.openxava.annotations.Required;
-import org.openxava.calculators.CurrentDateCalculator;
+import org.openxava.calculators.CurrentLocalDateCalculator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -43,7 +43,7 @@ class Inventario extends BaseEntity implements Auditable {
 
     @Column(nullable = false)
     @Required
-    @DefaultValueCalculator(CurrentDateCalculator.class)
+    @DefaultValueCalculator(CurrentLocalDateCalculator.class)
     private LocalDate fecha;
 
     @Column(length = 200, nullable = false)
